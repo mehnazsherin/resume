@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehnaz Sherin Z | Resume</title>
+
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 210mm;
+            height: 297mm;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #e8ebe8;
+            color: #1d2721;
+        }
+
+        /* =========================
+           A4 RESUME SHEET
+        ========================= */
+
+        .resume {
+            width: 210mm;
+            height: 297mm;
+            background: #ffffff;
+
+            margin: 0 auto;
+            padding: 14mm 16mm;
+
+            overflow: hidden;
+
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            display: grid;
+            grid-template-columns: 1fr 105px;
+            gap: 25px;
+            align-items: center;
+
+            padding-bottom: 13px;
+
+            border-bottom: 2px solid #287a52;
+        }
+
+        .name {
+            font-size: 32px;
+            line-height: 1;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            color: #17221b;
+        }
+
+        .name span {
+            color: #287a52;
+        }
+
+        .role {
+            margin-top: 6px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            color: #287a52;
+        }
+
+        .contact {
+            margin-top: 10px;
+
+            font-size: 9.5px;
+            line-height: 1.7;
+
+            color: #59635c;
+        }
+
+        .contact a {
+            color: #59635c;
+            text-decoration: none;
+        }
+
+        /* =========================
+           PHOTO
+        ========================= */
+
+        .photo {
+            width: 105px;
+            height: 125px;
+
+            object-fit: cover;
+
+            border-radius: 7px;
+            border: 1px solid #d7ddd8;
+        }
+
+        /* =========================
+           SUMMARY
+        ========================= */
+
+        .intro {
+            margin: 11px 0 13px;
+
+            font-size: 9.7px;
+            line-height: 1.55;
+
+            color: #505a53;
+        }
+
+        /* =========================
+           MAIN GRID
+        ========================= */
+
+        .content {
+            display: grid;
+            grid-template-columns: 1.55fr 0.75fr;
+
+            gap: 25px;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        .section {
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 9.5px;
+            font-weight: 700;
+
+            color: #287a52;
+
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+
+            padding-bottom: 4px;
+            margin-bottom: 7px;
+
+            border-bottom: 1px solid #dfe5df;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education h3 {
+            font-size: 11px;
+            margin-bottom: 2px;
+        }
+
+        .education p {
+            font-size: 9px;
+            line-height: 1.45;
+            color: #626b65;
+        }
+
+        /* =========================
+           ACHIEVEMENTS
+        ========================= */
+
+        .achievement {
+            margin-bottom: 7px;
+        }
+
+        .achievement h3 {
+            font-size: 10px;
+            line-height: 1.35;
+            margin-bottom: 2px;
+        }
+
+        .achievement p {
+            font-size: 8.8px;
+            line-height: 1.4;
+            color: #626b65;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .project {
+            margin-bottom: 9px;
+        }
+
+        .project h3 {
+            font-size: 11px;
+            margin-bottom: 2px;
+        }
+
+        .project-meta {
+            font-size: 8px;
+            font-weight: 700;
+
+            color: #287a52;
+
+            margin-bottom: 3px;
+        }
+
+        .project p {
+            font-size: 8.8px;
+            line-height: 1.42;
+
+            color: #59635c;
+        }
+
+        .tech {
+            margin-top: 3px;
+
+            font-size: 8px;
+            font-weight: 600;
+
+            color: #287a52;
+        }
+
+        /* =========================
+           LEADERSHIP
+        ========================= */
+
+        .leadership-item {
+            margin-bottom: 7px;
+        }
+
+        .leadership-item h3 {
+            font-size: 9.5px;
+            margin-bottom: 2px;
+        }
+
+        .leadership-item p {
+            font-size: 8.5px;
+            line-height: 1.4;
+
+            color: #626b65;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skill-group {
+            margin-bottom: 7px;
+        }
+
+        .skill-group strong {
+            display: block;
+
+            font-size: 8.8px;
+            margin-bottom: 2px;
+
+            color: #28322c;
+        }
+
+        .skill-group p {
+            font-size: 8.5px;
+            line-height: 1.4;
+
+            color: #626b65;
+        }
+
+        /* =========================
+           TAGS
+        ========================= */
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .tag {
+            font-size: 7.8px;
+
+            background: #edf4ef;
+            color: #286744;
+
+            padding: 3px 6px;
+
+            border-radius: 3px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            margin-top: 5px;
+            padding-top: 7px;
+
+            border-top: 1px solid #dfe5df;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 7.5px;
+            color: #89918b;
+        }
+
+        /* =========================
+           PRINT
+        ========================= */
+
+        @media print {
+
+            html,
+            body {
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 0;
+
+                background: #ffffff;
+            }
+
+            .resume {
+                width: 210mm;
+                height: 297mm;
+
+                margin: 0;
+                padding: 14mm 16mm;
+
+                box-shadow: none;
+
+                overflow: hidden;
+            }
+        }
+
+        /* =========================
+           SCREEN
+        ========================= */
+
+        @media screen and (min-width: 900px) {
+
+            body {
+                padding: 25px 0;
+            }
+
+            .resume {
+                min-height: 297mm;
+            }
+        }
+
+        /* =========================
+           MOBILE PREVIEW
+        ========================= */
+
+        @media screen and (max-width: 899px) {
+
+            body {
+                width: 100%;
+                height: auto;
+                padding: 10px;
+                background: #e8ebe8;
+            }
+
+            .resume {
+                width: 100%;
+                height: auto;
+                min-height: 0;
+
+                padding: 25px;
+
+                overflow: visible;
+            }
+
+            .header {
+                grid-template-columns: 1fr 85px;
+                gap: 15px;
+            }
+
+            .photo {
+                width: 85px;
+                height: 105px;
+            }
+
+            .name {
+                font-size: 27px;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <main class="resume">
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header class="header">
+
+            <div>
+
+                <h1 class="name">
+                    Mehnaz <span>Sherin Z.</span>
+                </h1>
+
+                <p class="role">
+                    B.E. Computer Science &amp; Engineering · 2nd Year
+                </p>
+
+                <div class="contact">
+
+                    Coimbatore, Tamil Nadu, India
+                    &nbsp; | &nbsp;
+
+                    <a href="mailto:mehnazsherin21@gmail.com">
+                        mehnazsherin21@gmail.com
+                    </a>
+
+                    &nbsp; | &nbsp;
+
+                    +91 90431 50312
+
+                    <br>
+
+                    <a href="#">
+                        LinkedIn
+                    </a>
+
+                    &nbsp; · &nbsp;
+
+                    <a href="#">
+                        GitHub
+                    </a>
+
+                    &nbsp; · &nbsp;
+
+                    <a href="#">
+                        Portfolio
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <img
+                class="photo"
+                src="sh1.jpg"
+                alt="Mehnaz Sherin Z"
+            >
+
+        </header>
+
+
+        <!-- =========================
+             PROFESSIONAL SUMMARY
+        ========================== -->
+
+        <p class="intro">
+
+            Computer Science student, startup innovator and technical team
+            lead passionate about building technology-driven solutions for
+            real-world problems. Experienced in AI, IoT, software development,
+            hackathons and startup innovation, with a strong interest in
+            Artificial Intelligence, Full-Stack Development and emerging
+            technologies.
+
+        </p>
+
+
+        <!-- =========================
+             CONTENT
+        ========================== -->
+
+        <div class="content">
+
+
+            <!-- LEFT COLUMN -->
+
+            <div>
+
+
+                <!-- EDUCATION -->
+
+                <section class="section education">
+
+                    <h2 class="section-title">
+                        Education
+                    </h2>
+
+                    <h3>
+                        B.E. Computer Science &amp; Engineering
+                    </h3>
+
+                    <p>
+                        Rathinam Technical Campus, Coimbatore
+                    </p>
+
+                    <p>
+                        Anna University · 2025 – 2029
+                    </p>
+
+                </section>
+
+
+                <!-- ACHIEVEMENTS -->
+
+                <section class="section">
+
+                    <h2 class="section-title">
+                        Achievements
+                    </h2>
+
+                    <article class="achievement">
+
+                        <h3>
+                            🏆 Winner — AICCI National Startup Summit 2026
+                        </h3>
+
+                        <p>
+                            Winner in the Salt Innovation category for
+                            SmartSalt AI, an IoT-based salt-field monitoring
+                            solution.
+                        </p>
+
+                    </article>
+
+
+                    <article class="achievement">
+
+                        <h3>
+                            🥈 2nd Prize — Kumaraguru Livestock Hackathon
+                        </h3>
+
+                        <p>
+                            Developed BioWeave, a smart livestock health
+                            monitoring solution using thermochromic technology
+                            and ESP32.
+                        </p>
+
+                    </article>
+
+
+                    <article class="achievement">
+
+                        <h3>
+                            🚀 Smart India Hackathon
+                        </h3>
+
+                        <p>
+                            Developed AI-powered solutions addressing
+                            real-world agricultural challenges.
+                        </p>
+
+                    </article>
+
+                </section>
+
+
+                <!-- PROJECTS -->
+
+                <section class="section">
+
+                    <h2 class="section-title">
+                        Selected Projects
+                    </h2>
+
+
+                    <article class="project">
+
+                        <h3>
+                            SmartSalt AI
+                        </h3>
+
+                        <div class="project-meta">
+                            TEAM LEAD · NATIONAL STARTUP WINNER
+                        </div>
+
+                        <p>
+                            IoT-based salt-field monitoring system integrating
+                            sensors, AI camera analysis, LoRa communication
+                            and cloud technologies to monitor salinity,
+                            temperature, water level, weather and crystal growth.
+                        </p>
+
+                        <div class="tech">
+                            ESP32 · IoT · LoRa · AI · Cloud
+                        </div>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <h3>
+                            FARmera
+                        </h3>
+
+                        <div class="project-meta">
+                            SMART INDIA HACKATHON · PS 26180
+                        </div>
+
+                        <p>
+                            AI-powered farming assistant designed to identify
+                            crop diseases, pests, nutrient deficiencies and
+                            irrigation requirements while supporting farmers
+                            during extreme weather conditions.
+                        </p>
+
+                        <div class="tech">
+                            React · Tailwind CSS · JavaScript · AI/ML · Firebase
+                        </div>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <h3>
+                            BioWeave
+                        </h3>
+
+                        <div class="project-meta">
+                            KUMARAGURU LIVESTOCK HACKATHON · 2ND PRIZE
+                        </div>
+
+                        <p>
+                            Smart livestock health-monitoring solution
+                            combining thermochromic ear tags with ESP32-based
+                            temperature sensing.
+                        </p>
+
+                        <div class="tech">
+                            ESP32 · Sensors · IoT · Embedded Systems
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- LEADERSHIP -->
+
+                <section class="section">
+
+                    <h2 class="section-title">
+                        Leadership
+                    </h2>
+
+                    <article class="leadership-item">
+
+                        <h3>
+                            Technical Team Lead
+                        </h3>
+
+                        <p>
+                            Led teams across hackathons and startup
+                            competitions, coordinating ideation, technical
+                            architecture, prototyping and presentations.
+                        </p>
+
+                    </article>
+
+
+                    <article class="leadership-item">
+
+                        <h3>
+                            Talkonauts — Leadership Council
+                        </h3>
+
+                        <p>
+                            Contributed to student leadership,
+                            communication and event activities.
+                        </p>
+
+                    </article>
+
+                </section>
+
+            </div>
+
+
+            <!-- RIGHT COLUMN -->
+
+            <aside>
+
+
+                <!-- TECHNICAL SKILLS -->
+
+                <section class="section">
+
+                    <h2 class="section-title">
+                        Technical Skills
+                    </h2>
+
+                    <div class="skill-group">
+
+                        <strong>
+                            Programming
+                        </strong>
+
+                        <p>
+                            C · Java · Python · JavaScript
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-group">
+
+                        <strong>
+                            Web Development
+                        </strong>
+
+                        <p>
+                            HTML · CSS · React · Tailwind CSS
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-group">
+
+                        <strong>
+                            AI &amp; Data
+                        </strong>
+
+                        <p>
+                            AI/ML Fundamentals · Computer Vision
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-group">
+
+                        <strong>
+                            IoT &amp; Embedded
+                        </strong>
+
+                        <p>
+                            ESP32 · Arduino · Sensors · LoRa
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-group">
+
+                        <strong>
+                            Backend &amp; Database
+                        </strong>
+
+                        <p>
+                            Firebase · Supabase · MongoDB
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-group">
+
+                        <strong>
+                            Tools
+                        </strong>
+
+                        <p>
+                            Git · GitHub · VS Code · Linux · Docker · Jenkins
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- TECHNICAL EXPOSURE -->
+
+                <section class="section">
+
+                    <h2 class="section-title">
+                        Technical Exposure
+                    </h2>
+
+                    <div class="tags">
+
+                        <span class="tag">SolidWorks</span>
+                        <span class="tag">3D Printing</span>
+                        <span class="tag">CNC</span>
+                        <span class="tag">PCB</span>
+                        <span class="tag">Arduino</span>
+                        <span class="tag">ESP32</span>
+                        <span class="tag">Sensors</span>
+                        <span class="tag">Linux</span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- CORE STRENGTHS -->
+
+                <section class="section">
+
+                    <h2 class="section-title">
+                        Core Strengths
+                    </h2>
+
+                    <div class="tags">
+
+                        <span class="tag">Leadership</span>
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">Communication</span>
+                        <span class="tag">Public Speaking</span>
+                        <span class="tag">Innovation</span>
+                        <span class="tag">Teamwork</span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- INTERESTS -->
+
+                <section class="section">
+
+                    <h2 class="section-title">
+                        Interests
+                    </h2>
+
+                    <div class="tags">
+
+                        <span class="tag">AI / ML</span>
+                        <span class="tag">Full-Stack</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">Software Engineering</span>
+                        <span class="tag">Startups</span>
+
+                    </div>
+
+                </section>
+
+
+            </aside>
+
+        </div>
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer class="footer">
+
+            <span>
+                Mehnaz Sherin Z
+            </span>
+
+            <span>
+                B.E. Computer Science &amp; Engineering
+            </span>
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
